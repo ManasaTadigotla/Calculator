@@ -43,6 +43,7 @@ public class BasicArithmatic
 				temp=Math.floorDiv((remainder+10), divisor);
 				//remainder=
 				System.out.println(temp);
+				System.out.println("testing git");
 				break;
 				}
 				else 
