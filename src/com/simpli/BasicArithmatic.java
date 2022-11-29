@@ -11,6 +11,7 @@ public class BasicArithmatic
 	public int subtractNumbers(int minuend,int subtrahend)
 	{
 		int difference=minuend-subtrahend;
+		System.out.println(difference);
 		return difference;
 		
 	}
@@ -40,13 +41,15 @@ public class BasicArithmatic
 				if(remainder<10)
 				{
 				temp=Math.floorDiv((remainder+10), divisor);
+				//remainder=
 				System.out.println(temp);
+				break;
 				}
 				else 
 					break;
 			}
 			
-		}while(remainder!=0);
+		}while(remainder>0);
 
 			
 		int x=Math.floorDiv(dividend, divisor);
