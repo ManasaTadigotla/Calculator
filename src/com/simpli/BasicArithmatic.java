@@ -2,22 +2,22 @@ package com.simpli;
 
 public class BasicArithmatic 
 {
-	public int addNumbers(int first,int second)
+	public float addNumbers(float first,float second)
 	{
-		int sum=first+second;
+		float sum=first+second;
 		return sum;
 	}
 	
-	public int subtractNumbers(int minuend,int subtrahend)
+	public float subtractNumbers(Float minuend,Float subtrahend)
 	{
-		int difference=minuend-subtrahend;
+		float difference=minuend-subtrahend;
 		System.out.println(difference);
 		return difference;
 		
 	}
-	public int multiplication(int x,int y )
+	public float multiplication(float x,float y )
 	{
-		int result=x*y;
+		float result=x*y;
 		return result;
 		
 	}
@@ -27,35 +27,36 @@ public class BasicArithmatic
 	// number which we get as a result is known as the quotient
 	//The divisor which does not divide a number completely 
 	//produces a number, which is referred to as remainder
-	public double divide(int dividend,int divisor)
+	public float divide(int dividend,int divisor)
 	{
-		
+		int count=0;
 		int quotient;
 		int remainder;
-		int temp;
+		float result;
+		int temp=0;
+		int decimalValue=0;
 		quotient=dividend/divisor;
 		remainder=dividend%divisor;
 		do{
 			if(remainder!=0)
 			{
-				if(remainder<10)
-				{
-				temp=Math.floorDiv((remainder+10), divisor);
-				//remainder=
+								
+				temp=Math.floorDiv((remainder*10), divisor);				
+				remainder=(remainder*10)%divisor;
+				//count++;
+				decimalValue=(decimalValue*10)+temp;
+				
+				count++;
 				System.out.println(temp);
-				System.out.println("testing git");
-				break;
-				}
-				else 
-					break;
+							
+					
 			}
 			
-		}while(remainder>0);
-
-			
-		int x=Math.floorDiv(dividend, divisor);
-		System.out.println(x);
-		return quotient;
+		}while(remainder>0 &&count<5);
+		System.out.println(quotient+"."+decimalValue);
+		result=Float.parseFloat((quotient+"."+decimalValue));
+		System.out.println(result);
+		return result;	
 		
 	}
 
