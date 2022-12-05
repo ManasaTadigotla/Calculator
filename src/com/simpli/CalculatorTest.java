@@ -15,12 +15,11 @@ public class CalculatorTest
 		Scanner userInput=new Scanner(System.in);
 		do
 			{
-			System.out.println("Calculator:Select from below");
-			System.out.println("1.Addition"+"\n"+"2.Subtraction"+"\n"+"3.Multiplication"+"\n"+"4.Division"+"\n"+"5.Exit");
+				System.out.println("Calculator:Select from below");
+				System.out.println("1.Addition"+"\n"+"2.Subtraction"+"\n"+"3.Multiplication"+"\n"+"4.Division"+"\n"+"5.Exit");
 			if(userInput.hasNextInt())
 			{
 				choice=userInput.nextInt();
-				//System.out.println(choice);
 			}
 			else
 			{
@@ -33,7 +32,7 @@ public class CalculatorTest
 				switch(choice)
 				{
 				case 1:
-					//double 
+				{
 					float firstNumber=0;
 					float secondNumber=0;
 					float sum=0;
@@ -55,8 +54,9 @@ public class CalculatorTest
 					sum=calculator.addNumbers(firstNumber,secondNumber);
 					System.out.println("Sum is "+sum);
 					break;
-					
+				}	
 				case 2:
+				{
 					float minuend=0;
 					float subtrahend;
 					float difference=0;
@@ -77,8 +77,9 @@ public class CalculatorTest
 					difference=calculator.subtractNumbers(minuend, subtrahend);
 					System.out.println("Difference is "+difference);
 					break;
-					
+				}	
 				case 3:
+				{
 					float Numberone=0;
 					float Numbertwo=0;
 					float total=0;
@@ -101,8 +102,9 @@ public class CalculatorTest
 					total=calculator.multiplication(Numberone, Numbertwo);
 					System.out.println("The result is "+total);
 					break;
-				
+				}
 				case 4:
+				{
 					int dividend=0;
 					int divisor=0;
 					float quotient=0;
@@ -134,28 +136,32 @@ public class CalculatorTest
 					}
 					
 					break;
-					
+				}	
 				case 5: 
+				{
+					System.out.println("Thank you for using");
 					System.exit(0);
 					break;
 				}
-				
-			System.out.println("Do you want to perform another operation? Press 'y' to continue");
-			if(!userInput.next().toLowerCase().contentEquals("y"))
-			{
-				System.out.println("Closing Calculator");
-				break;
-			//continueInput=userInput.next();	
-			}	
-			else
-			{
-				continue;
 			}
-			
+				//Switch Statement ends here
+				
+				
+				System.out.println("Do you want to perform another operation? Press 'y' to continue");
+				if(!userInput.next().toLowerCase().contentEquals("y"))
+				{
+					System.out.println("Closing Calculator");
+					break;
+				//continueInput=userInput.next();	
+				}	
+				else
+				{
+					continue;
+				}
+				
 			
 		}while((choice>=0 && choice<6));
-		//double result=calculator.divide(208,3);
-		//System.out.println(result);
+		
 	}
 
 }
